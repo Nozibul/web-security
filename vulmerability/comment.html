@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comment Page</title>
+</head>
+<body>
+  <h2>Leave a Comment</h2>
+  <form id="form">
+    <textarea id="comment"></textarea><br>
+    <button type="submit">Post</button>
+  </form>
+
+  <div id="comments"></div>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(e){
+      e.preventDefault();
+      const input = document.getElementById("comment").value;
+      const p = document.createElement("p");
+      p.innerHTML = input; // XSS here
+      document.getElementById("comments").appendChild(p);
+    });
+  </script>
+</body>
+</html>

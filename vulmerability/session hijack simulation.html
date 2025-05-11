@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XSS Demo</title>
+</head>
+<body>
+  <h2>XSS Session Hijack Test</h2>
+
+  <script>
+    // Dummy cookie for testing
+    document.cookie = "session_id=abc123xyz; path=/";
+  </script>
+
+  <form id="commentForm">
+    <textarea id="userComment" placeholder="Write a comment..."></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="commentsSection">
+    <h3>Comments:</h3>
+  </div>
+
+  <script>
+    const form = document.getElementById("commentForm");
+    const commentBox = document.getElementById("userComment");
+    const commentsSection = document.getElementById("commentsSection");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const comment = commentBox.value;
+
+      const p = document.createElement("p");
+      p.innerHTML = comment;
+      commentsSection.appendChild(p);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+</head>
+<body>
+  <h2>Admin Panel</h2>
+  <script>
+    if(document.cookie.indexOf("role=admin") === -1){
+      document.write("You are not authorized to view this page.");
+    } else {
+      document.write("<p>Welcome Admin! Here is all user data.</p>");
+    }
+  </script>
+</body>
+</html>
