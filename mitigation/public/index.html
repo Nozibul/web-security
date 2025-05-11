@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mitigation</title>
+    <!-- unsecure site url -->
+    <script src="http://unsecure.com/abc.js"></script>
+    <script src="http://unsecures.com/xyz.js"></script>
+    <!-- ইনলাইন স্ক্রিপ্ট -->
+    <script nonce="randomKey">
+      alert("This is inline JavaScript!");
+    </script>
+    <script>
+      alert("This is inline");
+    </script>
+  </head>
+  <body>
+    <h2>Page for XSS demo</h2>
+    <img
+      src="https://media.licdn.com/dms/image/v2/D5635AQGoFF4Z4_mWSg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1737005236475?e=1747587600&v=beta&t=C7O75xzJed4gSGpZ9J3xsM6Z1hicAKJLPCQXbVbN0yE"
+      alt=""
+    />
+  </body>
+</html>
