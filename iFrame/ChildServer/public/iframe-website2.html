@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Iframe - Potential Data Theft</title>
+  </head>
+  <body>
+    <h2>This is iframe-website2</h2>
+
+    <p>Trying to access parent window data...</p>
+
+    <script>
+      window.alert("Hello");
+      window.onload = function () {
+        try {
+          // Try reading parent document's cookie
+          const parentCookies = window.parent.document;
+          const stolenData = parentCookies.innerHTML;
+          alert(stolenData);
+        } catch (err) {
+          console.error("Access Denied:", err);
+        }
+      };
+    </script>
+  </body>
+</html>
