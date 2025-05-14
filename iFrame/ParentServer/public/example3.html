@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clickjacking Example 1</title>
+  </head>
+  <body>
+    <h1>Render google in iFrame</h1>
+    <p>Click the button below to see a simple clickjacking demonstration.</p>
+
+    <iframe src="https://google.co.in"></iframe>
+    <script>
+      document
+        .getElementById("overlay-button")
+        .addEventListener("click", () => {
+          alert("Button clicked!");
+        });
+    </script>
+  </body>
+</html>
